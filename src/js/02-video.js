@@ -1,4 +1,4 @@
-import throttle from '../../node_modules/lodash.throttle';
+import throttle from 'lodash.throttle';
 console.log(throttle);
 
 const iframe = document.getElementById('vimeo-player');
@@ -12,7 +12,7 @@ const LOCALSTORAGE_TIME_KEY = 'videoplayer-current-time';
 player.on(
   'timeupdate',
   throttle(function (data) {
-    console.log('timeupdate the video!', data);
+    // console.log('timeupdate the video!', data);
     // data is an object containing properties specific to that event
     localStorage.setItem(LOCALSTORAGE_TIME_KEY, data.seconds);
   }, 1000)

@@ -24,7 +24,7 @@ function handleFormSubmit(event) {
 }
 
 function handleFormInputs(event) {
-  const message = event.target.value;
+  //   const message = event.target.value;
   //   formData[event.target.name] = message;
   const inputsObj = {
     email: formData.email.value,
@@ -33,14 +33,14 @@ function handleFormInputs(event) {
   console.log(inputsObj);
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(inputsObj));
-  console.log(event);
+  //   console.log(event);
 }
 
 storageForFormInputs();
 
 function storageForFormInputs() {
   const savedInputs = localStorage.getItem(STORAGE_KEY);
-  console.log(savedInputs);
+  //   console.log(savedInputs);
 
   const objOfSavedInputs = JSON.parse(savedInputs);
   console.log(objOfSavedInputs);

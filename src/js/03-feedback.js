@@ -44,12 +44,11 @@ function storageForFormInputs() {
 
   const objOfSavedInputs = JSON.parse(savedInputs);
   console.log(objOfSavedInputs);
-
-  if (objOfSavedInputs.message) {
+  if (objOfSavedInputs && objOfSavedInputs.message) {
     formData.textarea.value = objOfSavedInputs.message;
   }
 
-  if (objOfSavedInputs.email) {
+  if (objOfSavedInputs && objOfSavedInputs.email) {
     formData.email.value = objOfSavedInputs.email;
   }
 }

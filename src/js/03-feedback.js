@@ -18,6 +18,11 @@ formData.form.addEventListener('submit', handleFormSubmit);
 // }
 
 function handleFormSubmit(event) {
+  console.log(formData.email.value);
+  if (formData.email.value === '' || formData.textarea.value === '') {
+    console.log('Empty string');
+    return;
+  }
   event.preventDefault();
   event.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);

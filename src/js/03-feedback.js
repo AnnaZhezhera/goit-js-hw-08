@@ -18,8 +18,8 @@ formData.form.addEventListener('submit', handleFormSubmit);
 // }
 
 function handleFormSubmit(event) {
-  //   console.log(formData.email.value);
-  //   console.log(formData.textarea.value);
+  console.log('email: ', formData.email.value);
+  console.log('message: ', formData.textarea.value);
   event.preventDefault();
   if (formData.email.value === '' || formData.textarea.value === '') {
     console.log('validation error');
@@ -29,7 +29,7 @@ function handleFormSubmit(event) {
   localStorage.removeItem(STORAGE_KEY);
 }
 
-function handleFormInputs(event) {
+function handleFormInputs() {
   //   const message = event.target.value;
   //   formData[event.target.name] = message;
   const inputsObj = {

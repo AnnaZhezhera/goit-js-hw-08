@@ -19,12 +19,15 @@ formData.form.addEventListener('submit', handleFormSubmit);
 
 function handleFormSubmit(event) {
   event.preventDefault();
-  if (formData.email.value === '' || formData.textarea.value === '') {
+  if (
+    formData.email.value.trim() === '' ||
+    formData.textarea.value.trim() === ''
+  ) {
     console.log('validation error');
     return;
   }
-  console.log('email: ', formData.email.value);
-  console.log('message: ', formData.textarea.value);
+  console.log('email:', formData.email.value.trim());
+  console.log('message:', formData.textarea.value.trim());
   event.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
 }
@@ -33,8 +36,8 @@ function handleFormInputs() {
   //   const message = event.target.value;
   //   formData[event.target.name] = message;
   const inputsObj = {
-    email: formData.email.value,
-    message: formData.textarea.value,
+    email: formData.email.value.trim(),
+    message: formData.textarea.value.trim(),
   };
   console.log(inputsObj);
 

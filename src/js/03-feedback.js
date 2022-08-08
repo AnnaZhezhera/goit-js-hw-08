@@ -18,13 +18,13 @@ formData.form.addEventListener('submit', handleFormSubmit);
 // }
 
 function handleFormSubmit(event) {
-  console.log('email: ', formData.email.value);
-  console.log('message: ', formData.textarea.value);
   event.preventDefault();
   if (formData.email.value === '' || formData.textarea.value === '') {
     console.log('validation error');
     return;
   }
+  console.log('email: ', formData.email.value);
+  console.log('message: ', formData.textarea.value);
   event.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
 }

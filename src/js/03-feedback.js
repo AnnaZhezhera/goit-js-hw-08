@@ -18,6 +18,11 @@ formData.form.addEventListener('submit', handleFormSubmit);
 // }
 
 function handleFormSubmit(event) {
+  const objForConsole = {
+    email: formData.email.value.trim(),
+    message: formData.textarea.value.trim(),
+  };
+
   event.preventDefault();
   if (
     formData.email.value.trim() === '' ||
@@ -26,8 +31,7 @@ function handleFormSubmit(event) {
     console.log('validation error');
     return;
   }
-  console.log('email:', formData.email.value.trim());
-  console.log('message:', formData.textarea.value.trim());
+  console.log(objForConsole);
   event.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
 }
@@ -42,7 +46,6 @@ function handleFormInputs() {
   console.log(inputsObj);
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(inputsObj));
-  //   console.log(event);
 }
 
 storageForFormInputs();
@@ -52,7 +55,7 @@ function storageForFormInputs() {
   //   console.log(savedInputs);
 
   const objOfSavedInputs = JSON.parse(savedInputs);
-  console.log(objOfSavedInputs);
+  //   console.log(objOfSavedInputs);
   if (objOfSavedInputs && objOfSavedInputs.message) {
     formData.textarea.value = objOfSavedInputs.message;
   }
